@@ -8,7 +8,7 @@ The preprint describing the data can be accessed via: https://osf.io/gr7bn
 
 Here you will find the files used to prepare the dataset, create the baseline experiments, and the official two-fold splits of the dataset.
 
-![banner](https://raw.githubusercontent.com/simula/kvasir-capsule/master/static/images/banner.png?token=AD6YIMVUI67SA5ZNSSNKMS27HTRCY)
+![banner](https://raw.githubusercontent.com/simula/kvasir-capsule/master/static/images/banner.png?token=AD6YIMUIZUBGKGAPFAQB62C7HTU5G)
 
 ## Repository Structure
 This repository has the following structure. *experiments* contains the files used to perform the classification experiments presented in the paper. *official_splits* contains the official splits of the dataset. We recommend that users of this dataset use these splits in order to ensure a fair comparison of results. *plot_scripts* contains a the scripts used to generate all plots. *static* contains some files used in this repository. *metadata.csv* contains some additional metadata about the labeled images, including coordinates for bounding boxes.
