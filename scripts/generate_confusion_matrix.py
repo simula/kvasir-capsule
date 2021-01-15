@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description="Generate confusion matrix based on
 
 np.set_printoptions(linewidth=np.inf)
 
-parser.add_argument("-i", "--input-prediction-file", nargs="+", required=True)
+parser.add_argument("-i", "--input-prediction-file", type=str, required=True)
 parser.add_argument("-o", "--output-file", type=str, default="./confusion_matrix.pdf")
 
 INDEX_TO_LETTER = {
@@ -27,8 +27,8 @@ INDEX_TO_LABEL = {
     3:  "Erythematous",
     4:  "Foreign Bodies",
     5:  "Ileo-cecal valve",
-    6:  "Lymphoid Hyperplasia",
-    7:  "Normal mucosa",
+    6:  "Lymphangiectasia",
+    7:  "Normal",
     8:  "Pylorus",
     9:  "Reduced Mucosal View",
     10: "Ulcer",
@@ -46,7 +46,7 @@ INDEX_TO_LABEL = {
 
 LABEL_TO_LETTER = {
     "Angiectasia": "A", "Blood": "B", "Erosion": "C", "Erythematous": "D",
-    "Foreign Bodies": "E", "Ileo-cecal valve": "F", "Lymphoid Hyperplasia": "G", "Normal mucosa": "H",
+    "Foreign Bodies": "E", "Ileo-cecal valve": "F", "Lymphangiectasia": "G", "Normal": "H",
     "Pylorus": "I", "Reduced Mucosal View": "J", "Ulcer": "K"
 }
 
@@ -127,11 +127,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     
-    input_prediction_files = args.input_prediction_file
+    input_prediction_file = args.input_prediction_file
     output_file = args.output_file
 
-    for input_prediction_file in input_prediction_files:
+    y_true, y_pred = read_prediction_file(input_prediction_file, INDEX_TO_LETTER)
 
-        y_true, y_pred = read_prediction_file(input_prediction_file, INDEX_TO_LETTER)
-
-        plot_confusion_matrix(y_true, y_pred, "%s.png" % os.path.basename(input_prediction_file), sorted(list(INDEX_TO_LETTER.values())))
+    plot_confusion_matrix(y_true, y_pred, "%s.png" % os.path.basename(input_prediction_file), sorted(list(INDEX_TO_LETTER.values())))
