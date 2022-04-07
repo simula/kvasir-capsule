@@ -4,6 +4,8 @@ This is the official repository for the Kvasir-Capsule dataset, which is the lar
 
 The full dataset can be dowloaded via: https://osf.io/dv2ag/
 
+Some users experience problems with downloading the data from OSF. All data is also available here: https://drive.google.com/drive/u/1/folders/18vEHN1CG7oNFKdT2NmhtJjrFhb3tLG1Z and here https://datasets.simula.no/kvasir-capsule/ as zip file.
+
 The preprint describing the data can be accessed via: https://osf.io/gr7bn
 
 Here you will find the files used to prepare the dataset, create the baseline experiments, and the official two-fold splits of the dataset.
